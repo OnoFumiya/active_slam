@@ -1,0 +1,6 @@
+geometry_msgs/Vector3[] cost
+geometry_msgs/Vector3[] clearly
+---
+geometry_msgs/Vector3[] cost_res
+geometry_msgs/Vector3[] clearly_res
+geometry_msgs/Pose misalignment
