@@ -14,8 +14,8 @@
 #include <typeinfo>
 #include <sys/time.h>
 #include <matplotlib-cpp/matplotlibcpp.h>
-#include <mapping_own/Plot.h>
-#include <mapping_own/MapInformation.h>
+#include <active_slam/Plot.h>
+#include <active_slam/MapInformation.h>
 
 
 

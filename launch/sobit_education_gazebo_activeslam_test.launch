@@ -1,6 +1,6 @@
 <launch>
   <!-- <arg name="rviz"                    default="false"/>
-  <arg name="rviz_cfg"                default="$(find mapping_own)/config/rviz/active_slam.rviz"/>
+  <arg name="rviz_cfg"                default="$(find active_slam)/config/rviz/active_slam.rviz"/>
   <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" args="-d $(arg rviz_cfg)"/> -->
 
   <!-- these are the arguments you can pass this launch file, for example paused:=true -->
@@ -21,7 +21,7 @@
     <!-- <arg name="headless" value="$(arg headless)"/> -->
   <!-- </include> -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find mapping_own)/worlds/$(arg world_name)"/>
+    <arg name="world_name" value="$(find active_slam)/worlds/$(arg world_name)"/>
     <!-- <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>

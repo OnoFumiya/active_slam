@@ -13,7 +13,7 @@
 #include <typeinfo>
 #include <sys/time.h>
 #include <matplotlib-cpp/matplotlibcpp.h>
-#include <mapping_own/MapInformation.h>
+#include <active_slam/MapInformation.h>
 #include <geometry_msgs/Pose.h>
 
 
@@ -214,14 +214,14 @@ class PRESENTATION
         GRIDDING gridding;
         ROBOT_POSITION robot_position;
         OBSTACLE_DIST obstacle_dist;
-        mapping_own::MapInformation map;
+        active_slam::MapInformation map;
         MOVE_CLASS move_class;
         std::vector<float> pose;
         PRESENTATION()
         {
             ros::NodeHandle node;
-            pub_global_map = node.advertise<mapping_own::MapInformation>("/global_map", 10);
-            pub_astar_node = node.advertise<mapping_own::MapInformation>("/astar_node", 10);
+            pub_global_map = node.advertise<active_slam::MapInformation>("/global_map", 10);
+            pub_astar_node = node.advertise<active_slam::MapInformation>("/astar_node", 10);
             global_map();
             // a_star();
             move_class.go(0.0, 0.5,5.4);
@@ -356,7 +356,7 @@ class PRESENTATION
         //             break;
         //         }
         //     }
-        //     mapping_own::MapInformation node;
+        //     active_slam::MapInformation node;
         //     geometry_msgs::Vector3 n;
         //     n.x = pose[0];
         //     n.y = pose[1];

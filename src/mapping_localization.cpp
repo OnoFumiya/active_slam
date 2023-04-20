@@ -13,7 +13,7 @@
 #include <typeinfo>
 #include <sys/time.h>
 #include <matplotlib-cpp/matplotlibcpp.h>
-#include <mapping_own/MapInformation.h>
+#include <active_slam/MapInformation.h>
 #include <geometry_msgs/Pose.h>
 
 
@@ -72,7 +72,7 @@ class MAP_LOCALIZATION
         ros::Subscriber sub_dist;
         ROBOT_POSITION robot_position;
         bool frag = false;
-        void callback_map(const mapping_own::MapInformation &global_getmap)
+        void callback_map(const active_slam::MapInformation &global_getmap)
         {
             costmap.clear();
             for (int i=0; i<global_getmap.cost.size(); i++)
@@ -105,7 +105,7 @@ class MAP_LOCALIZATION
             get_dist();
             localization();
         }
-        // mapping_own::MapInformation local_map;
+        // active_slam::MapInformation local_map;
         GRIDDING gridding;
         std::vector<geometry_msgs::Vector3> costmap;
         // geometry_msgs::Pose missed;

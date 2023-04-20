@@ -1,5 +1,5 @@
 <launch>
   <arg name="rviz"                    default="true"/>
-  <arg name="rviz_cfg"                default="$(find mapping_own)/config/rviz/active_slam.rviz"/>
+  <arg name="rviz_cfg"                default="$(find active_slam)/config/rviz/active_slam.rviz"/>
   <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" args="-d $(arg rviz_cfg)"/>
 </launch>

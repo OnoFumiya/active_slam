@@ -14,8 +14,8 @@
 #include <typeinfo>
 #include <sys/time.h>
 #include <matplotlib-cpp/matplotlibcpp.h>
-#include <mapping_own/MapInformation.h>
-#include <mapping_own/Plot.h>
+#include <active_slam/MapInformation.h>
+#include <active_slam/Plot.h>
 
 
 
@@ -205,10 +205,10 @@ class PATH_PLANNING
         std::vector<std::vector<int>> vector_2d;
         std::vector<std::vector<float>> vector_2d_dijkstra_cost;
         std::vector<std::vector<bool>> vector_2d_dijkstra_bool;
-        mapping_own::MapInformation get_map_stack;
-        mapping_own::Plot expansion_pose;
+        active_slam::MapInformation get_map_stack;
+        active_slam::Plot expansion_pose;
         bool f;
-        void callback_map(const mapping_own::MapInformation &get_map)
+        void callback_map(const active_slam::MapInformation &get_map)
         {
             get_map_stack.cost.clear();
             get_map_stack.clearly.clear();
@@ -222,7 +222,7 @@ class PATH_PLANNING
             }
             f = true;
         }
-        // void callback_map(const mapping_own::MapInformation &get_map)
+        // void callback_map(const active_slam::MapInformation &get_map)
         // {
         //     f = true;
         //     vector_1d_int_callback.resize(plot_size,-1);
@@ -286,7 +286,7 @@ class PATH_PLANNING
             // limit_point[2] = std::numeric_limits<int>::max();
             // limit_point[3] = (std::numeric_limits<int>::max())*(-1);
             sub_map = node.subscribe("/mapping", 10, &PATH_PLANNING::callback_map, this);
-            pub_expansion = node.advertise<mapping_own::Plot>("/expansion_poses",10);
+            pub_expansion = node.advertise<active_slam::Plot>("/expansion_poses",10);
             get_sub_map();
             dijkstra();
         }
@@ -320,7 +320,7 @@ class PATH_PLANNING
             {
                 ros::spinOnce();
                 expansion_pose.poses.clear();
-                // mapping_own::Plot expansion_pose;
+                // active_slam::Plot expansion_pose;
                 vector_2d.clear();
                 vector_2d.resize(plot_size,vector_1d_int);
                 vector_2d_dijkstra_cost.clear();

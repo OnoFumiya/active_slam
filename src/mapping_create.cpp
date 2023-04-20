@@ -13,7 +13,7 @@
 #include <typeinfo>
 #include <sys/time.h>
 #include <matplotlib-cpp/matplotlibcpp.h>
-#include <mapping_own/MapInformation.h>
+#include <active_slam/MapInformation.h>
 #include <geometry_msgs/Pose.h>
 
 
@@ -178,15 +178,15 @@
 //         }
 //     public:
 //         ROBOT_POSITION robot_position;
-//         mapping_own::MapInformation map;
+//         active_slam::MapInformation map;
 //         bool create_frag = false;
 //         MAP_CREATE()
 //         {
 //             ros::NodeHandle node;
-//             pub_global_map = node.advertise<mapping_own::MapInformation>("/global_map", 10);
+//             pub_global_map = node.advertise<active_slam::MapInformation>("/global_map", 10);
 //             sub_misalignment = node.subscribe("/localization_missed", 10, &MAP_CREATE::callback_misalignment, this);
 //             // sub_start = node.subscribe("/mapping_start", 10, &MAP_CREATE::callback_mapping_start, this);
-//             // pub_local_map = node.advertise<mapping_own::MapInformation>("/local_map", 10);
+//             // pub_local_map = node.advertise<active_slam::MapInformation>("/local_map", 10);
 //             before_create();
 //             create_map();
 //         }

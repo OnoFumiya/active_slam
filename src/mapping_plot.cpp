@@ -13,8 +13,8 @@
 #include <typeinfo>
 #include <sys/time.h>
 #include <matplotlib-cpp/matplotlibcpp.h>
-#include <mapping_own/MapInformation.h>
-#include <mapping_own/Plot.h>
+#include <active_slam/MapInformation.h>
+#include <active_slam/Plot.h>
 #include <visualization_msgs/MarkerArray.h>
 
 
@@ -227,10 +227,10 @@ class PLOT
         RvizMarkerLibrary marker_lib;
         ROBOT_POSITION robot_position;
         OBSTACLE_DIST obstacle_dist;
-        mapping_own::MapInformation plot_map;
+        active_slam::MapInformation plot_map;
         std::vector<geometry_msgs::Point> expansion_pose;
         bool map_set_frag,expansion_frag;
-        void callback_map(const mapping_own::MapInformation &get_map)
+        void callback_map(const active_slam::MapInformation &get_map)
         {
             plot_map.cost.clear();
             plot_map.clearly.clear();
@@ -244,7 +244,7 @@ class PLOT
             }
             map_set_frag = true;
         }
-        void callback_expansion(const mapping_own::Plot &get_ex)
+        void callback_expansion(const active_slam::Plot &get_ex)
         {
             geometry_msgs::Point pt_e;
             pt_e.z = 0.00;

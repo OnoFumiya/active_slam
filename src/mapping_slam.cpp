@@ -14,7 +14,7 @@
 #include <typeinfo>
 #include <sys/time.h>
 #include <matplotlib-cpp/matplotlibcpp.h>
-#include <mapping_own/MapInformation.h>
+#include <active_slam/MapInformation.h>
 #include <geometry_msgs/Pose.h>
 
 
@@ -175,7 +175,7 @@ class SLAM
         GRIDDING gridding;
         ROBOT_POSITION robot_position;
         OBSTACLE_DIST obstacle_dist;
-        mapping_own::MapInformation map;
+        active_slam::MapInformation map;
         int plot_size;
         int zero_point;
         int limit_point[4];
@@ -185,7 +185,7 @@ class SLAM
         SLAM()
         {
             ros::NodeHandle node;
-            pub_map = node.advertise<mapping_own::MapInformation>("/mapping", 10);
+            pub_map = node.advertise<active_slam::MapInformation>("/mapping", 10);
             plot_size = (int)((sqrt(std::numeric_limits<int>::max()))/3);
             zero_point = (int)(plot_size/2);
             vector_1d.resize(plot_size,-1);

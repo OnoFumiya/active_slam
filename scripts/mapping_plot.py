@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 # from matplotlib import patches
 import math
-from mapping_own.msg import MapInformation
+from active_slam.msg import MapInformation
 from geometry_msgs.msg import Vector3
 # from geometry_msgs.msg import Pose
 # geometry_msgs/Pose misalignment
