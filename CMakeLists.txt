@@ -13,12 +13,11 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   geometry_msgs
   visualization_msgs
-  matplotlib-cpp
   message_generation
 )
 
 ## System dependencies are found with CMake's conventions
-# find_package(PythonLibs REQUIRED)
+find_package(PythonLibs REQUIRED)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -107,16 +106,9 @@ generate_messages(
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
- INCLUDE_DIRS include
- LIBRARIES active_slam
- CATKIN_DEPENDS
- roscpp
- rospy
- std_msgs
- geometry_msgs
- visualization_msgs
- matplotlib-cpp
- message_runtime
+#  INCLUDE_DIRS include
+#  LIBRARIES active_slam
+ CATKIN_DEPENDS roscpp rospy std_msgs geometry_msgs visualization_msgs message_runtime
 #  DEPENDS system_lib
 )
 
@@ -129,7 +121,7 @@ catkin_package(
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
-  # ${PYTHON_INCLUDE_DIRS}
+  ${PYTHON_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
